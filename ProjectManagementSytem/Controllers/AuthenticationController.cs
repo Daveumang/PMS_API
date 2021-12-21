@@ -1,0 +1,49 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using ProjectManagementSytem.Authentication;
+using ProjectManagementSytem.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ProjectManagementSytem.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AuthenticationController : ControllerBase
+    {
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationUser> roleManager;
+        private readonly IConfiguration _configuration;
+
+        //public AuthenticateController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        //{
+        //    this.userManager = userManager;
+        //    //this.roleManager = roleManager;
+        //    _configuration = configuration;
+        //}
+        //[HttpPost]
+        //[Route("Register")]
+        //public async Task<IActionResult> Register([FromBody] Login model)
+        //{
+        //    var userExist = await userManager.FindByNameAsync(model.Username);
+        //    if (userExist != null)
+        //        return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User Already Exist" });
+        //    ApplicationUser user = new ApplicationUser()
+        //    {
+        //        Email = model.Email_Id,
+        //        SecurityStamp = Guid.NewGuid().ToString(),
+        //        UserName = model.Username
+        //    };
+        //    var result = await userManager.CreateAsync(user, model.Password);
+        //    if(!result.Succeeded)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User Creation Failed" });
+        //    }
+        //    return Ok(new Response { Status = "Success", Message = "User Created Successfully" });
+        //}
+    }
+}
